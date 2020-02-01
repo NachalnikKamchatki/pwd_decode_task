@@ -8,16 +8,11 @@
 # 77be4fc97f77f5f48308942bb6e32aacabed9cef
 import hashlib
 from string import ascii_lowercase
-from itertools import permutations
+from itertools import product
 
 
 def get_pwd_combinations(iterable, len_of_pwd):
-    lst_of_pwds = list(permutations(iterable, len_of_pwd))
-    pwds = []
-    for elem in lst_of_pwds:
-        pwd = ''.join(elem)
-        pwds.append(pwd)
-    return pwds
+    return [''.join(p) for p in product(iterable, repeat=6)]
 
 
 def get_pwd_from_hash(hash, passwords):
@@ -29,8 +24,9 @@ def get_pwd_from_hash(hash, passwords):
 
 
 def main():
-    passwords = get_pwd_combinations(ascii_lowercase, 4)
-    print(get_pwd_from_hash('e6fb06210fafc02fd7479ddbed2d042cc3a5155e', passwords))
+    passwords = get_pwd_combinations(ascii_lowercase, 5)
+    print(len(passwords))
+    # print(get_pwd_from_hash('b892f067921d231448e8f0a591107de8b2ad3202', passwords))
 
 
 if __name__ == '__main__':
