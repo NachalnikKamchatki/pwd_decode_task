@@ -15,10 +15,8 @@ def get_pwd_combinations(iterable, len_of_pwd):
     lst_of_pwds = list(permutations(iterable, len_of_pwd))
     pwds = []
     for elem in lst_of_pwds:
-        pwd = ''
-        for i in elem:
-            pwd += i
-            pwds.append(pwd)
+        pwd = ''.join(elem)
+        pwds.append(pwd)
     return pwds
 
 
