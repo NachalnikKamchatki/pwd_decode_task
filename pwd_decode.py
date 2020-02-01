@@ -25,8 +25,7 @@ def get_pwd_from_hash(hash, passwords):
 
 def main():
     passwords = get_pwd_combinations(ascii_lowercase, 5)
-    print(len(passwords))
-    # print(get_pwd_from_hash('b892f067921d231448e8f0a591107de8b2ad3202', passwords))
+    print(get_pwd_from_hash('b892f067921d231448e8f0a591107de8b2ad3202', passwords))
 
 
 if __name__ == '__main__':
